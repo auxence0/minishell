@@ -6,7 +6,7 @@
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 15:58:44 by asauvage          #+#    #+#              #
-#    Updated: 2026/03/19 17:11:54 by asauvage         ###   ########.fr        #
+#    Updated: 2026/03/19 17:18:48 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 all : $(NAME)
 
 $(LIBFT_LIB):
-	make -C $(LIBFT_PATH)
+	make -C $(LIBFT_DIR)
 
 $(NAME): $(OBJS) $(LIBFT_LIB)
 		$(CC) $(CFLAGS) $(OBJS) $(LIBFT_LIB) -o $(NAME) -lreadline

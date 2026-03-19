@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 16:12:59 by asauvage          #+#    #+#             */
-/*   Updated: 2026/03/19 16:56:09 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/03/19 20:29:19 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,17 @@
 #include <signal.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
 #include <sys/ioctl.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <term.h>
 #include "../libft/libft.h"
 
+typedef	struct	s_token
+{
+	char	**token;
+	char	**env;
+}			t_token;
 
 #endif
