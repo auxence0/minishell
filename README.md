@@ -281,10 +281,8 @@ Documenter les limites évite les ambiguïtés au moment de l’évaluation.
 
 ## Auteurs
 
-À compléter :
-
-- `nom_1`
-- `nom_2`
+- `Auxence`
+- `hbray`
 
 ---
 
