@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbray <hbray@student.42.fr>                +#+  +:+       +#+        */
+/*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 16:12:59 by asauvage          #+#    #+#             */
-/*   Updated: 2026/03/20 11:44:21 by hbray            ###   ########.fr       */
+/*   Updated: 2026/03/20 14:29:52 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,7 @@ typedef struct s_token
 	struct s_token	*prev;
 }					t_token;
 
-typedef struct minishell
-{
-	/* data */
-};
+void	malloc_struct(t_token *token);
+char	**split(char *str);
 
 #endif

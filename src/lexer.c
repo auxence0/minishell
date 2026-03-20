@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_struct.c                                      :+:      :+:    :+:   */
+/*   lexer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/20 11:45:10 by hbray             #+#    #+#             */
-/*   Updated: 2026/03/20 12:55:45 by asauvage         ###   ########.fr       */
+/*   Created: 2026/03/20 12:58:14 by asauvage          #+#    #+#             */
+/*   Updated: 2026/03/20 15:37:17 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	malloc_struct(t_token *token)
+//Lexer = analyse lexical
+
+void	lexer(char *str, t_token *token, t_type *type)
 {
-	token = malloc(sizeof(t_token));
-	if (!token)
-	{
-		write(2, "hbray: Malloc\n", 15);
-		exit (1);
-	}
+	int	i;
+
+	split(str);
 }

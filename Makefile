@@ -6,7 +6,7 @@
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 15:58:44 by asauvage          #+#    #+#              #
-#    Updated: 2026/03/19 17:18:48 by asauvage         ###   ########.fr        #
+#    Updated: 2026/03/20 14:28:49 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ LIBFT_LIB = $(LIBFT_DIR)/libft.a
 LIBFT_INC = $(LIBFT_DIR)
 
 SRCS = main.c \
+	   split.c \
+	   init_struct.c
 
 SRCS := $(SRCS:%=$(SRC_DIR)/%)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)

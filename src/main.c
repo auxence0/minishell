@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbray <hbray@student.42.fr>                +#+  +:+       +#+        */
+/*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 16:12:33 by asauvage          #+#    #+#             */
-/*   Updated: 2026/03/20 10:15:24 by hbray            ###   ########.fr       */
+/*   Updated: 2026/03/20 12:59:33 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,15 @@ int	main(int ac, char **av, char **envp)
 	(void)av;
 	char	*line;
 	t_token	*token;
+	t_type	type;
 
-	token = malloc(sizeof(t_token));
-	if (!token)
-	{
-		write(2, "Error: Malloc\n", 15);
-		return (1);
-	}
-	token->env = envp;
+	malloc_struct(token);
 	while ((line = readline("minishell> ")) != NULL)
 	{
 
 		if (ft_strlen(line) > 0)
 			add_history(line);
+		lexer(line, token, type);
 		parse(line, token);
 		free(line);
 	}
