@@ -3,36 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hbray <hbray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 16:12:59 by asauvage          #+#    #+#             */
-/*   Updated: 2026/03/19 20:29:19 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/03/20 11:44:21 by hbray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
-#define MINISHELL_H
+# define MINISHELL_H
 
-#include <stdio.h>
-#include <unistd.h>
-#include <readline/readline.h>
-#include <readline/history.h>
-#include <dirent.h>
-#include <fcntl.h>
-#include <signal.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/ioctl.h>
-#include <sys/stat.h>
-#include <sys/wait.h>
-#include <term.h>
-#include "../libft/libft.h"
+# include "../libft/libft.h"
+# include <dirent.h>
+# include <fcntl.h>
+# include <readline/history.h>
+# include <readline/readline.h>
+# include <signal.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <sys/ioctl.h>
+# include <sys/stat.h>
+# include <sys/types.h>
+# include <sys/wait.h>
+# include <term.h>
+# include <unistd.h>
 
-typedef	struct	s_token
+typedef enum s_type
 {
-	char	**token;
-	char	**env;
-}			t_token;
+	WORD,
+	PIPE,
+	REDIR_IN,
+	REDIR_OUT,
+	REDIR_ADD,
+	HERREDOC,
+}					t_type;
+
+typedef struct s_token
+{
+	char			*token;
+	t_type			type;
+	struct s_token	*next;
+	struct s_token	*prev;
+}					t_token;
+
+typedef struct minishell
+{
+	/* data */
+};
 
 #endif
